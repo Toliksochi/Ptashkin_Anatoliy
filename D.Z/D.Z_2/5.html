@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  const a = +prompt("Введите первое число");
+  const b = +prompt("Введите второе число");
+
+/**
+ * Функция 1, считающая сумму аргументов
+ * @param {number} a - Первый аргумент
+ * @param {number} b - Второй аргумент
+ * @return {number} Сумма аргументов
+ */
+  function sum(a, b) {
+    return a + b;
+  }
+  console.log (sum(a, b)) 
+/**
+ * Функция 2, считающая разницу переданных аргументов
+ * @param {number} a - Первый аргумент
+ * @param {number} b - Второй аргумент
+ * @return {number} Разница аргументов
+ */
+  function dif (a, b) {
+    if (a > b) {
+      return a - b;
+    } else if (b > a) {
+      return b - a;
+    } else if (a==b){
+      return (0)
+    }
+  }
+  console.log (dif (a, b))
+/**
+ * Функция 3, считающая произведение переданных аргументов.
+ * @param {number} a - Первый аргумент
+ * @param {number} b - Второй аргумент
+ * @return {number} Проиведение аргументов
+ */
+  function mult(a, b) {
+    return a * b;
+  }
+  console.log (mult(a, b))
+/**
+ * Функция 4, считающая частное переданных аргументов
+ * @param {number} a - Первый аргумент
+ * @param {number} b - Второй аргумент
+ * @return {number} Частное аргументов
+ */
+  function div(a, b) {
+    return a / b;
+  }
+  console.log (div(a, b))
+/**
+   * Функция в зависимости от переданной операции производит вычисления от переданных аргументов
+   * @param {number} a - Первый аргумент равный переменной "а".
+   * @param {number} b - Второй агрумент, равный переменной "b"
+   * @param {string} operation - Заданная операция :
+   * "+", "-", "*", "/".
+   * @return {number} Результат операции operation над первыми двумя аргументами
+   * функции. Возвращает NaN, если операции или аргументы заданы
+   * неверно.
+   */
+  let operation = prompt("Введите операцию")
+  function mathOperation(a, b, operation) {
+    switch (operation) {
+      case "+": return sum(a, b);
+      case "-": return dif(a, b);
+      case "*": return mult(a, b);
+      case "/": return div(a, b);
+      default: return NaN;
+    }
+  }
+  console.log (mathOperation(a, b))
+</script>
+</body>
+</html>
